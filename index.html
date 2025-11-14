@@ -9,9 +9,17 @@
       content="Portfolio projects by Rusu Ionut - Vue.js and React applications"
     />
     <title>Projects - Rusu Ionut</title>
+    <meta name="theme-color" content="#667eea" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.json" />
     <style>
       * {
         margin: 0;
@@ -193,6 +201,84 @@
         color: #764ba2;
       }
 
+      .install-banner {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        padding: 15px 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        max-width: 90%;
+        animation: slideUp 0.5s ease-out;
+        z-index: 1000;
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateX(-50%) translateY(100px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(-50%) translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .install-banner.hidden {
+        display: none;
+      }
+
+      .install-text {
+        flex: 1;
+      }
+
+      .install-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 4px;
+      }
+
+      .install-subtitle {
+        font-size: 12px;
+        color: #718096;
+      }
+
+      .install-btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .install-btn:hover {
+        transform: scale(1.05);
+      }
+
+      .install-btn:active {
+        transform: scale(0.95);
+      }
+
+      .close-banner {
+        background: none;
+        border: none;
+        color: #718096;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 5px;
+        line-height: 1;
+      }
+
       @media (max-width: 480px) {
         .container {
           padding: 30px 20px;
@@ -355,5 +441,46 @@
         </div>
       </div>
     </div>
+
+    <div id="installBanner" class="install-banner hidden">
+      <div class="install-text">
+        <div class="install-title">📱 Add to Home Screen</div>
+        <div class="install-subtitle">Quick access to my portfolio</div>
+      </div>
+      <button id="installBtn" class="install-btn">Install</button>
+      <button id="closeBanner" class="close-banner">&times;</button>
+    </div>
+
+    <script>
+      let deferredPrompt;
+      const installBanner = document.getElementById("installBanner");
+      const installBtn = document.getElementById("installBtn");
+      const closeBanner = document.getElementById("closeBanner");
+
+      window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        installBanner.classList.remove("hidden");
+      });
+
+      installBtn.addEventListener("click", async () => {
+        if (!deferredPrompt) {
+          return;
+        }
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        deferredPrompt = null;
+        installBanner.classList.add("hidden");
+      });
+
+      closeBanner.addEventListener("click", () => {
+        installBanner.classList.add("hidden");
+      });
+
+      window.addEventListener("appinstalled", () => {
+        deferredPrompt = null;
+        installBanner.classList.add("hidden");
+      });
+    </script>
   </body>
 </html>
