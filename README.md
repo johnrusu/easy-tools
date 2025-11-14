@@ -12,7 +12,7 @@ Visit the portfolio: [https://johnrusu.github.io/easy-tools/](https://johnrusu.g
 
 Generate QR codes for WiFi networks instantly with support for WPA, WEP, and open networks.
 
-- **Tech Stack**: Vue.js 3, TypeScript, Pinia, TailwindCSS
+- **Tech Stack**: Vue.js, TypeScript, Pinia, TailwindCSS
 - **Features**: Real-time validation, print-ready downloads
 - **Live Demo**: [WiFi QR Code Generator](https://johnrusu.github.io/vue-qr-code-network-generator/)
 
@@ -20,7 +20,7 @@ Generate QR codes for WiFi networks instantly with support for WPA, WEP, and ope
 
 Real-time currency conversion tool with live exchange rates and a clean, intuitive interface.
 
-- **Tech Stack**: Vue.js, TypeScript, API Integration
+- **Tech Stack**: Vue.js, TypeScript, Buefy, TailwindCSS
 - **Features**: Live exchange rates, quick calculations
 - **Live Demo**: [Currency Converter](https://johnrusu.github.io/vue-currency-converter/)
 
