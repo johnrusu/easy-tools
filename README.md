@@ -89,7 +89,7 @@ This portfolio is deployed using GitHub Pages. To deploy your own version:
 
 - Fullstack Developer | Vue.js & React Specialist
 - GitHub: [@johnrusu](https://github.com/johnrusu)
-- LinkedIn: [Ionut Rusu](https://www.linkedin.com/in/rusu-ionut.ro-1035b112)
+- LinkedIn: [Ionut Rusu](https://www.linkedin.com/in/ionut-rusu-1035b112)
 - Website: [rusu-ionut.ro](https://rusu-ionut.ro)
 
 ## 📄 License
