@@ -414,7 +414,7 @@
 
       <div class="footer">
         <p style="color: #718096; font-size: 14px">
-          © 2024 Rusu Ionut. All rights reserved.
+          © <span id="currentYear"></span> Rusu Ionut. All rights reserved.
         </p>
         <div class="social-links">
           <a
@@ -486,6 +486,10 @@
       }
     </script>
     <script>
+      // Set current year dynamically
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
       let deferredPrompt;
       const installBanner = document.getElementById("installBanner");
       const installBtn = document.getElementById("installBtn");
