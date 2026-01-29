@@ -8,7 +8,15 @@ Visit the portfolio: [https://johnrusu.github.io/easy-tools/](https://johnrusu.g
 
 ## 📋 Featured Projects
 
-### 1. WiFi QR Code Generator
+### 1. Recipe Finder
+
+Discover and explore delicious recipes with an intuitive search interface.
+
+- **Tech Stack**: Vue.js, TypeScript, Vuetify, Auth0
+- **Features**: Search by ingredients, secure authentication, save favorites, dietary preferences, detailed cooking instructions
+- **Live Demo**: [Recipe Finder](https://johnrusu.github.io/recipe-finder/)
+
+### 2. WiFi QR Code Generator
 
 Generate QR codes for WiFi networks instantly with support for WPA, WEP, and open networks.
 
@@ -16,7 +24,7 @@ Generate QR codes for WiFi networks instantly with support for WPA, WEP, and ope
 - **Features**: Real-time validation, print-ready downloads
 - **Live Demo**: [WiFi QR Code Generator](https://johnrusu.github.io/vue-qr-code-network-generator/)
 
-### 2. Currency Converter
+### 3. Currency Converter
 
 Real-time currency conversion tool with live exchange rates and a clean, intuitive interface.
 
@@ -24,21 +32,13 @@ Real-time currency conversion tool with live exchange rates and a clean, intuiti
 - **Features**: Live exchange rates, quick calculations
 - **Live Demo**: [Currency Converter](https://johnrusu.github.io/vue-currency-converter/)
 
-### 3. React Notes
+### 4. React Notes
 
 Modern notes application with advanced organization and customization features.
 
 - **Tech Stack**: React, Redux, Material-UI, TailwindCSS
 - **Features**: Drag-and-drop, text search, highlighting, dark/light mode, localStorage persistence
 - **Live Demo**: [React Notes](https://johnrusu.github.io/react-notes/)
-
-### 4. Recipe Finder
-
-Discover and explore delicious recipes with an intuitive search interface.
-
-- **Tech Stack**: Vue.js, TypeScript, Vuetify, Auth0
-- **Features**: Search by ingredients, secure authentication, save favorites, dietary preferences, detailed cooking instructions
-- **Live Demo**: [Recipe Finder](https://johnrusu.github.io/recipe-finder/)
 
 ## 🛠️ Technologies Used
 
