@@ -32,6 +32,14 @@ Modern notes application with advanced organization and customization features.
 - **Features**: Drag-and-drop, text search, highlighting, dark/light mode, localStorage persistence
 - **Live Demo**: [React Notes](https://johnrusu.github.io/react-notes/)
 
+### 4. Recipe Finder
+
+Discover and explore delicious recipes with an intuitive search interface.
+
+- **Tech Stack**: React, JavaScript, API Integration
+- **Features**: Search by ingredients, cuisine type filtering, dietary preferences, detailed cooking instructions
+- **Live Demo**: [Recipe Finder](https://johnrusu.github.io/recipe-finder/)
+
 ## 🛠️ Technologies Used
 
 - **Frontend Frameworks**: Vue.js 3, React
