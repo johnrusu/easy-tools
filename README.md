@@ -36,8 +36,8 @@ Modern notes application with advanced organization and customization features.
 
 Discover and explore delicious recipes with an intuitive search interface.
 
-- **Tech Stack**: React, JavaScript, API Integration
-- **Features**: Search by ingredients, cuisine type filtering, dietary preferences, detailed cooking instructions
+- **Tech Stack**: Vue.js, TypeScript, Vuetify, Auth0
+- **Features**: Search by ingredients, secure authentication, save favorites, dietary preferences, detailed cooking instructions
 - **Live Demo**: [Recipe Finder](https://johnrusu.github.io/recipe-finder/)
 
 ## 🛠️ Technologies Used
