@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -154,12 +154,16 @@
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Oxygen, Ubuntu, Cantarell, sans-serif;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+          Cantarell, sans-serif;
         background-color: #242424;
-        background-image: url(https://www.rusu-ionut.ro/resources/images/triangles-top-2.svg),
+        background-image:
+          url(https://www.rusu-ionut.ro/resources/images/triangles-top-2.svg),
           url(https://www.rusu-ionut.ro/resources/images/triangles-bottom-2.svg);
-        background-position: left top, right bottom;
+        background-position:
+          left top,
+          right bottom;
         background-repeat: no-repeat;
         background-size: inherit;
         background-attachment: fixed;
@@ -172,7 +176,7 @@
       }
 
       .container {
-        max-width: 800px;
+        max-width: 1400px;
         width: 100%;
         background: white;
         border-radius: 20px;
@@ -220,9 +224,9 @@
       }
 
       .projects {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 25px;
       }
 
       .project-card {
@@ -231,40 +235,14 @@
         border-radius: 15px;
         padding: 25px;
         transition: all 0.3s ease;
-        text-decoration: none;
-        display: block;
         position: relative;
         overflow: hidden;
       }
 
-      .project-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(102, 126, 234, 0.1),
-          transparent
-        );
-        transition: left 0.5s ease;
-      }
-
-      .project-card:hover::before {
-        left: 100%;
-      }
-
       .project-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0, 99, 177, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 99, 177, 0.2);
         border-color: #0063b1;
-      }
-
-      .project-card:active {
-        transform: translateY(-2px);
       }
 
       .project-icon {
@@ -283,11 +261,26 @@
         gap: 10px;
       }
 
+      .project-title-link {
+        text-decoration: none;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .project-title-link:hover .project-title {
+        color: #0063b1;
+      }
+
+      .project-title-link:hover .arrow {
+        transform: translateX(5px);
+      }
+
       .project-description {
         font-size: 14px;
         color: #718096;
         line-height: 1.6;
         margin-bottom: 10px;
+        margin-top: 0;
       }
 
       .project-tech {
@@ -298,22 +291,55 @@
       }
 
       .tech-badge {
-        background: #0063b1;
+        background: linear-gradient(135deg, #0063b1 0%, #004d8c 100%);
         color: white;
-        font-size: 12px;
-        padding: 4px 12px;
-        border-radius: 12px;
+        font-size: 13px;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0, 99, 177, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .tech-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 99, 177, 0.4);
+      }
+
+      .project-github-link {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #2d3748;
+        color: white !important;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
         font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0;
+        margin: 0;
+      }
+
+      .project-github-link svg {
+        width: 24px;
+        height: 24px;
+        fill: white;
+      }
+
+      .project-github-link:hover {
+        background-color: #1a202c;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(45, 55, 72, 0.4);
       }
 
       .arrow {
         margin-left: auto;
         font-size: 18px;
         transition: transform 0.3s ease;
-      }
-
-      .project-card:hover .arrow {
-        transform: translateX(5px);
       }
 
       .footer {
@@ -462,17 +488,19 @@
       </div>
 
       <div class="projects">
-        <a
-          href="https://johnrusu.github.io/recipe-finder/"
-          class="project-card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div class="project-card">
           <span class="project-icon">🍳</span>
-          <div class="project-title">
-            Recipe Finder
-            <span class="arrow">→</span>
-          </div>
+          <a
+            href="https://johnrusu.github.io/recipe-finder/"
+            class="project-title-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-title">
+              Recipe Finder
+              <span class="arrow">→</span>
+            </div>
+          </a>
           <p class="project-description">
             Discover and explore delicious recipes with an intuitive search
             interface. Browse by ingredients, cuisine type, and dietary
@@ -486,26 +514,26 @@
           </div>
           <a
             href="https://github.com/johnrusu/recipe-finder"
-            class="social-link"
+            class="social-link project-github-link"
             target="_blank"
             rel="noopener noreferrer"
-            style="display: inline-block; margin-top: 12px"
-            onclick="event.stopPropagation();"
-            >View on GitHub</a
+            ><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a
           >
-        </a>
+        </div>
 
-        <a
-          href="https://johnrusu.github.io/react-notes/"
-          class="project-card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div class="project-card">
           <span class="project-icon">📝</span>
-          <div class="project-title">
-            React Notes
-            <span class="arrow">→</span>
-          </div>
+          <a
+            href="https://johnrusu.github.io/react-notes/"
+            class="project-title-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-title">
+              React Notes
+              <span class="arrow">→</span>
+            </div>
+          </a>
           <p class="project-description">
             Modern notes application with drag-and-drop organization, text
             search, note highlighting, dark/light mode, and localStorage
@@ -519,26 +547,26 @@
           </div>
           <a
             href="https://github.com/johnrusu/react-notes"
-            class="social-link"
+            class="social-link project-github-link"
             target="_blank"
             rel="noopener noreferrer"
-            style="display: inline-block; margin-top: 12px"
-            onclick="event.stopPropagation();"
-            >View on GitHub</a
+            ><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a
           >
-        </a>
+        </div>
 
-        <a
-          href="https://johnrusu.github.io/vue-url-link-shortner/"
-          class="project-card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div class="project-card">
           <span class="project-icon">🔗</span>
-          <div class="project-title">
-            Vue URL Shortener
-            <span class="arrow">→</span>
-          </div>
+          <a
+            href="https://johnrusu.github.io/vue-url-link-shortner/"
+            class="project-title-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-title">
+              Vue URL Shortener
+              <span class="arrow">→</span>
+            </div>
+          </a>
           <p class="project-description">
             URL shortening service built with Vue.js. Create short, memorable
             links with custom aliases, track clicks, and manage your shortened
@@ -554,26 +582,26 @@
           </div>
           <a
             href="https://github.com/johnrusu/vue-url-link-shortner"
-            class="social-link"
+            class="social-link project-github-link"
             target="_blank"
             rel="noopener noreferrer"
-            style="display: inline-block; margin-top: 12px"
-            onclick="event.stopPropagation();"
-            >View on GitHub</a
+            ><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a
           >
-        </a>
+        </div>
 
-        <a
-          href="https://johnrusu.github.io/vue-qr-code-network-generator/"
-          class="project-card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div class="project-card">
           <span class="project-icon">📱</span>
-          <div class="project-title">
-            WiFi QR Code Generator
-            <span class="arrow">→</span>
-          </div>
+          <a
+            href="https://johnrusu.github.io/vue-qr-code-network-generator/"
+            class="project-title-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-title">
+              WiFi QR Code Generator
+              <span class="arrow">→</span>
+            </div>
+          </a>
           <p class="project-description">
             Generate QR codes for WiFi networks instantly. Support for WPA, WEP,
             and open networks with real-time validation and print-ready
@@ -587,26 +615,26 @@
           </div>
           <a
             href="https://github.com/johnrusu/vue-qr-code-network-generator"
-            class="social-link"
+            class="social-link project-github-link"
             target="_blank"
             rel="noopener noreferrer"
-            style="display: inline-block; margin-top: 12px"
-            onclick="event.stopPropagation();"
-            >View on GitHub</a
+            ><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a
           >
-        </a>
+        </div>
 
-        <a
-          href="https://johnrusu.github.io/vue-currency-converter/"
-          class="project-card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div class="project-card">
           <span class="project-icon">💱</span>
-          <div class="project-title">
-            Currency Converter
-            <span class="arrow">→</span>
-          </div>
+          <a
+            href="https://johnrusu.github.io/vue-currency-converter/"
+            class="project-title-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-title">
+              Currency Converter
+              <span class="arrow">→</span>
+            </div>
+          </a>
           <p class="project-description">
             Real-time currency conversion tool with live exchange rates. Clean
             interface for quick and accurate currency calculations.
@@ -619,26 +647,26 @@
           </div>
           <a
             href="https://github.com/johnrusu/vue-currency-converter"
-            class="social-link"
+            class="social-link project-github-link"
             target="_blank"
             rel="noopener noreferrer"
-            style="display: inline-block; margin-top: 12px"
-            onclick="event.stopPropagation();"
-            >View on GitHub</a
+            ><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a
           >
-        </a>
+        </div>
 
-        <a
-          href="https://johnrusu.github.io/react-currency-converter/"
-          class="project-card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div class="project-card">
           <span class="project-icon">💰</span>
-          <div class="project-title">
-            React Currency Converter
-            <span class="arrow">→</span>
-          </div>
+          <a
+            href="https://johnrusu.github.io/react-currency-converter/"
+            class="project-title-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-title">
+              React Currency Converter
+              <span class="arrow">→</span>
+            </div>
+          </a>
           <p class="project-description">
             Modern currency converter built with React. Features real-time
             exchange rates, clean UI, and intuitive user experience.
@@ -650,14 +678,12 @@
           </div>
           <a
             href="https://github.com/johnrusu/react-currency-converter"
-            class="social-link"
+            class="social-link project-github-link"
             target="_blank"
             rel="noopener noreferrer"
-            style="display: inline-block; margin-top: 12px"
-            onclick="event.stopPropagation();"
-            >View on GitHub</a
+            ><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a
           >
-        </a>
+        </div>
       </div>
 
       <div class="footer">
