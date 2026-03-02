@@ -445,9 +445,10 @@
         line-height: 1;
       }
 
-      @media (max-width: 480px) {
+      @media screen and (max-width: 480px) {
         .container {
           padding: 30px 20px;
+          display: block;
         }
 
         .author {
@@ -456,6 +457,14 @@
 
         .subtitle {
           font-size: 14px;
+        }
+
+        .projects {
+          display: block;
+        }
+
+        .projects > .project-card:not(:last-child) {
+          margin-bottom: 25px;
         }
 
         .project-card {
