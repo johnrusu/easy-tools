@@ -40,6 +40,14 @@ Modern notes application with advanced organization and customization features.
 - **Features**: Drag-and-drop, text search, highlighting, dark/light mode, localStorage persistence
 - **Live Demo**: [React Notes](https://johnrusu.github.io/react-notes/)
 
+### 5. Email Sender Service
+
+Standalone Express-only project for sending HTML emails with Nodemailer.
+
+- **Tech Stack**: Express, Nodemailer, TailwindCSS, Gmail SMTP
+- **Features**: `POST /email`, `GET /health`, smoke test page, HTML template loading, recipient limits, concurrency controls
+- **Repository**: [express-sending-emails](https://github.com/johnrusu/express-sending-emails)
+
 ## 🛠️ Technologies Used
 
 - **Frontend Frameworks**: Vue.js 3, React
