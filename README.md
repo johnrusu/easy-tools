@@ -32,7 +32,7 @@ Generate QR codes for WiFi networks instantly with support for WPA, WEP, and ope
 - **Features**: Real-time validation, print-ready downloads
 - **Live Demo**: [WiFi QR Code Generator](https://johnrusu.github.io/vue-qr-code-network-generator/)
 
-### 3. Currency Converter
+### 4. Currency Converter
 
 Real-time currency conversion tool with live exchange rates and a clean, intuitive interface.
 
@@ -40,7 +40,7 @@ Real-time currency conversion tool with live exchange rates and a clean, intuiti
 - **Features**: Live exchange rates, quick calculations
 - **Live Demo**: [Currency Converter](https://johnrusu.github.io/vue-currency-converter/)
 
-### 4. React Notes
+### 5. React Notes
 
 Modern notes application with advanced organization and customization features.
 
@@ -48,7 +48,7 @@ Modern notes application with advanced organization and customization features.
 - **Features**: Drag-and-drop, text search, highlighting, dark/light mode, localStorage persistence
 - **Live Demo**: [React Notes](https://johnrusu.github.io/react-notes/)
 
-### 5. Email Sender Service
+### 6. Email Sender Service
 
 Standalone Express-only project for sending HTML emails with Nodemailer.
 
