@@ -16,7 +16,15 @@ Discover and explore delicious recipes with an intuitive search interface.
 - **Features**: Search by ingredients, secure authentication, save favorites, dietary preferences, detailed cooking instructions
 - **Live Demo**: [Recipe Finder](https://johnrusu.github.io/recipe-finder/)
 
-### 2. WiFi QR Code Generator
+### 2. Ziare Romanesti
+
+Catalog and reader for Romanian and English news sources.
+
+- **Tech Stack**: Vue.js, TypeScript, Vite, Pinia, TailwindCSS
+- **Features**: Language filters, catalog search, recent papers, in-app iframe reader
+- **Live Demo**: [Ziare Romanesti](https://johnrusu.github.io/newspaper/)
+
+### 3. WiFi QR Code Generator
 
 Generate QR codes for WiFi networks instantly with support for WPA, WEP, and open networks.
 
