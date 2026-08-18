@@ -22,7 +22,7 @@ Catalog and reader for Romanian and English news sources.
 
 - **Tech Stack**: Vue.js, TypeScript, Vite, Pinia, TailwindCSS
 - **Features**: Language filters, catalog search, recent papers, in-app iframe reader
-- **Live Demo**: [Ziare Romanesti](https://johnrusu.github.io/newspaper/)
+- **Live Demo**: [Ziare Romanesti](https://johnrusu.github.io/ziare/)
 
 ### 3. WiFi QR Code Generator
 
