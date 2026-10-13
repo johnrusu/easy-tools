@@ -67,10 +67,13 @@ Standalone Express-only project for sending HTML emails with Nodemailer.
 ## 🎨 Design Features
 
 - Responsive design for all screen sizes
-- Modern gradient backgrounds
-- Smooth animations and transitions
-- Interactive hover effects
-- Clean and intuitive user interface
+- Warm neutral backgrounds, teal accents, and custom SVG illustrations
+- Project search by name, description, or technology, with category filters
+- Keyboard navigation, visible focus states, and reduced-motion support
+- Responsive project cards with direct app, demo, and source links
+
+The site uses plain HTML, CSS, and JavaScript without a build step. Page styles
+live in `resources/styles.css`; project filtering lives in `resources/projects.js`.
 
 ## 📦 Installation & Usage
 

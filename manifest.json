@@ -1,18 +1,18 @@
 {
-  "name": "Rusu Ionut - Portfolio",
-  "short_name": "Portfolio",
+  "name": "Easy Tools by Ionuț Rusu",
+  "short_name": "Easy Tools",
   "description": "Portfolio projects by Rusu Ionut - Vue.js and React applications",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#667eea",
-  "theme_color": "#667eea",
+  "background_color": "#f7f8f5",
+  "theme_color": "#176d5c",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "apple-touch-icon.png",
+      "src": "resources/favicons/apple-icon-180x180.png",
       "sizes": "180x180",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "favicon.svg",
