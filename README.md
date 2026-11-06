@@ -54,6 +54,7 @@ Standalone Express-only project for sending HTML emails with Nodemailer.
 
 - **Tech Stack**: Express, Nodemailer, TailwindCSS, Gmail SMTP
 - **Features**: `POST /email`, `GET /health`, smoke test page, HTML template loading, recipient limits, concurrency controls
+- **Live Demo**: [Email Sender Service](https://mailroom.rusu-ionut.ro/)
 - **Repository**: [express-sending-emails](https://github.com/johnrusu/express-sending-emails)
 
 ## 🛠️ Technologies Used
